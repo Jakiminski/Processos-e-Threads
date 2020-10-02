@@ -7,7 +7,7 @@ def criaMatriz(tam):
 		for i in range(tam):
 			linha = []
 			for j in range(tam):
-				num = random.randint(1,11)
+				num = random.randint(1,99999)
 				linha.append(num)
 			matriz.append(linha)
 	return matriz
