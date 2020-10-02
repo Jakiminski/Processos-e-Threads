@@ -39,6 +39,6 @@ def countPrime(lista):
 	counter = 0
 	for number in lista:
 		counter += 1 if isPrime(number) else 0
-	
+    
 	#print(counter)
 	return counter

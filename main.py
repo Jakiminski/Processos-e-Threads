@@ -13,10 +13,14 @@ contaPrimos = 0
 if __name__ == '__main__':
 	
 	## Criar matriz de num aleatorios
+
 	matriz = criaMatriz(100)
 	#printMatriz(matriz)
 	#print('Matriz gerada.')
 
+  matriz = criaMatriz(4)
+	printMatriz(matriz)
+	
 	if modo=='multiprocessing': # Executar processos concorrentes
 		
 		fila = Queue() # Fila com os valores de retorno
@@ -27,6 +31,7 @@ if __name__ == '__main__':
 		
 		pTempo = process_time_ns()
 		print('Tempo inicial da CPU (ns): {}'.format(pTempo))
+
 		# Inicia a execução concorrente
 		for p in processos:
 			p.start()
@@ -34,6 +39,7 @@ if __name__ == '__main__':
 		# Espera o término dos processos-filhos
 		for p in processos:
 			p.join()
+      
 		fim = process_time_ns()
 
 		# ContaPrimos
@@ -45,6 +51,7 @@ if __name__ == '__main__':
 		print('{} num primos encontrados.'.format(contaPrimos))
 		
 	elif modo=='threading': # # Executar threads
+
 		print('criando threads...')
 
 	## Cada rotina verificará se um elemento da matriz é num primo
