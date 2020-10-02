@@ -1,16 +1,20 @@
-from multiprocessing import Process, Queue
+from multiprocessing import Process, Queue, current_process
 import os
 from util import *
 
 ## Info do processo
-def pPrintInfo():
-	print('\n----------------------')
-	print('nome:{}\tprocesso-pai:{}\tid do processo:{}'.format(__name__,os.getppid(),os.getpid()))
-	print('----------------------\n')
+def pPrintInfo(message):
+	#print('\n----------------------')
+	name = current_process().name
+	pid = os.getpid()
+	#print('nome:{}\tprocesso-pai:{}\tid do processo:{}'.format(__name__,os.getppid(),os.getpid()))
+	print('{} (PID {})\t {}'.format(name,pid,message))
+	#print('----------------------\n')
 	pass
 
 # Rotina que implementa contagem de primos
-def pRoutine(lista,queue):
-	pPrintInfo()
-	queue.put(countPrime(lista))
+def pRoutine(lista,fila):
+	#pPrintInfo('antes')
+	fila.put(countPrime(lista))
+	#pPrintInfo('depois')
 	pass
