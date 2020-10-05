@@ -24,7 +24,7 @@ def printMatriz(matriz):
 	print('-------')
 	pass
 
-# Se num é primo
+# Se o num é primo	
 def isPrime(n):
 	# É divisível só por 1 e ele mesmo?
 	div = 0 # Quantidade de divisores desse número
@@ -39,6 +39,5 @@ def countPrime(lista):
 	counter = 0
 	for number in lista:
 		counter += 1 if isPrime(number) else 0
-    
-	#print(counter)
+    	#print(counter)
 	return counter
