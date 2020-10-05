@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# coding: utf-8
+
 from multiprocessing import Process, Queue, current_process
 import os
 from util import *

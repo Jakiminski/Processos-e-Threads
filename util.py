@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# coding: utf-8
+
 import random
 
 # Cria matriz com numeros aleatorios

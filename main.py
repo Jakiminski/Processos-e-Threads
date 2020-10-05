@@ -27,7 +27,7 @@ if __name__ == '__main__':
 		processos = [Process(name='worker{}'.format(i),target=pRoutine,args=(matriz[i],fila)) for i in range(n)]
 		
 		tempo = time()
-		print('Tempo inicial da CPU (ns): {}'.format(pTempo))
+		print('Tempo inicial da CPU: {}'.format(tempo))
 
 		# Inicia a execução concorrente
 		for p in processos:
@@ -43,7 +43,7 @@ if __name__ == '__main__':
 			contaPrimos += fila.get()
 		# Tempo final gasto pela CPU (não é tempo de relógio, considera apenas tempo em execução)
 		print('Tempo final da CPU: {}'.format(tempo))
-		print('Intervalo de execução {} ns.'.format(fim - tempo))
+		print('Intervalo de execução {}.'.format(fim - tempo))
 		print('{} num primos encontrados.'.format(contaPrimos))
 		
 	elif modo=='threading': # # Executar threads
