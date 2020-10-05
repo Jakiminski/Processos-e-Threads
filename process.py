@@ -17,7 +17,6 @@ def pPrintInfo(message):
 
 # Rotina que implementa contagem de primos
 def pRoutine(lista,fila):
-	#pPrintInfo('antes')
+
 	fila.put(countPrime(lista))
-	#pPrintInfo('depois')
 	pass
