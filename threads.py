@@ -7,7 +7,7 @@ from util import *
 
 
 ## Info do processo
-def pPrintInfo(message):
+def tPrintInfo(message):
 
 	pass
 
