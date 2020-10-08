@@ -31,7 +31,7 @@ Ou seja, nas threads para o python, as máquinas tem sempre 1 core
 if __name__ == '__main__':
 	
 	## Criar matriz de num aleatorios
-	globals.init(100) # Tamanho da matriz
+	globals.init(150) # Tamanho da matriz
 	#printMatriz(globals.matriz)
 	#print('Matriz gerada.')
 	n = len(globals.matriz) # qnt de processos 
