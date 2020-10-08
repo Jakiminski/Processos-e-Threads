@@ -1,20 +1,17 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-import threading
+from threading import Thread
 #import os
-from util import *
-
-
-## Info do processo
-def tPrintInfo(message):
-
-	pass
-
+import globals # src globals.py
+from util import * # src
 
 # Rotina que implementa contagem de primos
-def tRoutine(lista,fila):
-	#pPrintInfo('antes')
-	#chamada à countPrime(lista)
-	#pPrintInfo('depois')
+def tRoutine(index):
+	l = globals.lock
+	m = globals.matriz
+	count = countPrime(m[index])
+	l.acquire() 
+	globals.contaPrimos += count
+	l.release()
 	pass
