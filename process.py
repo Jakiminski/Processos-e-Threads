@@ -3,20 +3,18 @@
 
 from multiprocessing import Process, Queue, current_process
 import os
-from util import *
-
-## Info do processo
-def pPrintInfo(message):
-	#print('\n----------------------')
-	name = current_process().name
-	pid = os.getpid()
-	#print('nome:{}\tprocesso-pai:{}\tid do processo:{}'.format(__name__,os.getppid(),os.getpid()))
-	print('{} (PID {})\t {}'.format(name,pid,message))
-	#print('----------------------\n')
-	pass
+import globals # src globals.py
+from util import * # src util.py
 
 # Rotina que implementa contagem de primos
-def pRoutine(lista,fila):
-
+def pRoutine(fila,index):
+	mat = globals.matriz
+	lista = mat[index]
 	fila.put(countPrime(lista))
 	pass
+
+def soma(fila,n):
+	counter = 0
+	for i in range(n):
+		counter += fila.get()
+	return counter
